@@ -1,0 +1,123 @@
+.news{
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    .news__content{
+        .news__title{
+            z-index: unset;
+            padding:10px 0;
+            .news__custom{
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 0;
+                .nav-item{
+                    display:block;
+                    .nav-link{
+                        border: none;
+                        border-bottom: 0;
+                        transition: all .5s;
+                        @include styleText($color-black-2,$fs-5,$fw-bold-1);
+                        &:hover{
+                            // border: none;
+                            @include styleText($color-organe-0,$fs-3,$fw-bold-1);
+                        }
+                        &.active{
+                            // border: none;
+                            @include styleText($color-organe-0,$fs-3,$fw-bold-1);
+                        }
+                        &:focus{
+                            // border: none;
+                            @include styleText($color-organe-0,$fs-3,$fw-bold-1);
+                        }
+                    }
+                }
+            }
+        }
+        .tab-content{
+            margin-top: 20px;
+            width:90%;
+            margin: auto;
+            .news__custom__item{
+                padding:0;
+                padding-right: $pd-2;
+                .news__dienanh{
+                    padding-top: $pd-2;
+                    img{
+                        border-radius: $border-radius-1;
+                    }
+                    .news__text{
+                        padding-top: $pd-1;
+                        a{
+                            text-decoration:none;
+                            h3{
+                                @include styleText($color-black-2,$fs-2,$fw-bold);
+                                transition: all .5s;
+                                &:hover{
+                                    color: $color-organe-0;
+                                }
+                            }
+                            
+                        }
+                        p{
+                            padding-top: $pd-2;
+                            padding-right: $pd-0;
+                            @include styleText($color-gray-2,$fs-0 + 1,$fw-normal);
+                            text-align: justify;
+                            margin-bottom: 15px;
+                        }
+                        .news__like{
+                            @include styleText($color-gray-2,$fs-0,$fw-normal);
+                            span{
+                                margin-right:$mg-1;
+                            }
+                        }
+                    }
+                }
+                .news__items{
+                    padding-top: $pd-2;
+                    padding-bottom: $pd-1;
+                    img{
+                        max-width: 50px;
+                        max-height: 50px;
+                        margin-right:$mg-0;
+                        border-radius: $border-radius-1;
+                    }
+                    .news__items__text{
+                        a{
+                            text-decoration:none;
+                            margin: 0 0 $mg-1;
+                            @include styleText($color-gray-2,$fs-2,$fw-normal);
+                            transition:all .5s;
+                            &:hover{
+                                color: $color-organe-0;
+                            }
+                        }
+                        
+                    }
+                }
+            }
+            
+        }
+        .btn-White{
+            font-size: 14px;
+            color: #949494;
+            border: 1px solid #949494;
+            border-radius: 4px;
+            text-align: center;
+            background: 0 0;
+            padding: 7px 25px;
+            transition: all .2s;
+            margin: auto;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            display: block;
+            &:hover{
+                color: $color-white-0;
+                background-color: $color-organe-0;
+                border: 1px solid $color-organe-0;
+            }
+        }
+    }
+}

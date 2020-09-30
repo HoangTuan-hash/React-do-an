@@ -1,0 +1,33 @@
+// Helper
+@import './Helper/variables';
+@import './Helper/mixin';
+
+//Base
+@import './Base/reset';
+@import './Base/scrollbar';
+
+// file sass của thư viện
+//vendors
+@import './Base/customize';
+
+// Components
+@import './Components/button';
+
+//Layout
+@import './Layouts/header';
+
+
+@import './Layouts/ticket';
+@import './Layouts/showtime';
+@import './Layouts/news';
+@import './Layouts/footer';
+@import './Layouts/carousel';
+@import './Layouts/movie';
+@import './Layouts/app';
+
+
+
+
+// Pages
+
+//Theme

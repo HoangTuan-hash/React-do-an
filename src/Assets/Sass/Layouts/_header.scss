@@ -1,0 +1,39 @@
+header{
+    box-shadow: 0 0 3px 0 $color-gray-0;
+    .header__custom{
+
+        img{
+            width: 60%;
+        }
+    
+        #movieNavbar{
+            .navbar-light{
+                .navbar-nav{
+                    .nav-link{
+                        @include styleText($color-black-2,$fs-1,$fw-normal);
+                        
+                    }
+                    &:hover{
+                        color: $color-organe-0;
+                    }
+                    
+                }
+            }
+            a{
+                @include styleText($color-black-2,$fs-1,$fw-normal);
+                display: flex;
+                align-items: center;
+                transition: all .5s;
+                .icon__login{
+                    margin-right: $mg-1;
+                    @include styleText($color-gray-2,$fs-4,$fw-normal);
+                }
+                &:hover{
+                    color: $color-orange-3;
+                }
+            }
+        }
+    }
+    
+    
+}

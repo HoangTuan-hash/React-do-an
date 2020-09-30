@@ -1,0 +1,223 @@
+.showTimes {
+    margin: $mg-4 0;
+    .colum {
+        border: 1px solid #ebebec;
+        padding: 0;
+        max-height: 667px;
+    }
+    .colum-1 {
+        width: 92px;
+        border: 1px solid #ebebec;
+        padding: 0;
+    }
+    .colum-2 {
+        width: 40%;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        &:hover::-webkit-scrollbar {
+            display: block;
+        }
+    }
+    .colum-3 {
+        width: calc(60% - 92px);
+        overflow-y: scroll;
+    }
+    .nav-tabs {
+        border: none;
+        .nav-item {
+            width: 100%;
+            position: relative;
+            padding: 10px;
+            opacity: 0.5;
+            &:hover{
+                opacity: 1;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: calc(100% - 30px);
+                transform: translateX(-50%);
+                border-bottom: 1px solid #fff;
+                border-color: rgba(238, 238, 238, 0.88);
+            }
+        }
+
+        .link-tab {
+            padding: $pd-1 $pd-3;
+        }
+        .nav-link {
+            width: 100%;
+            color: $color-black-0;
+            padding: 0;
+            &:focus,
+            &:hover {
+                border: none;
+            }
+            img {
+                width: 100%;
+                display: block;
+            }
+        }
+        .active {
+            border: none;
+            opacity: 1;
+        }
+        .nav-item-after {
+            position: relative;
+        }
+    }
+    .showTime__cinema--branch {
+        display: flex;
+        width: 100%;
+        .showTime__cinema--img {
+            width: 70px;
+            padding: $pd-0 0;
+            padding-right: $pd-1;
+            img {
+                width: 100%;
+            }
+        }
+        .showTime--branch-text {
+            width: calc(100% - 70px);
+            .full--adress {
+                margin-bottom: 0;
+
+                @include styleText($color-gray-2, $fs-1, $fw-normal);
+
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            .cinema--name {
+                @include styleText($color-organe-0, $fs-2, $fw-bold-1);
+            }
+            .cinema--nameBHD {
+                @include styleText($color-green-1, $fs-2, $fw-bold-1);
+            }
+            .cinema--nameGLX {
+                @include styleText($color-orange-1, $fs-2, $fw-bold-1);
+            }
+            .cinema--nameCNS {
+                @include styleText($color-violet-0, $fs-2, $fw-bold-1);
+            }
+            .cinema--nameCCD {
+                @include styleText($color-gray-5, $fs-2, $fw-bold-1);
+            }
+            .cinema--nameMEGA {
+                @include styleText($color-orange-2, $fs-2, $fw-bold-1);
+            }
+            .cinema--nameDcine {
+                @include styleText($color-black-0, $fs-2, $fw-bold-1);
+            }
+            .cinema--nameLotte {
+                @include styleText($color-orange-3, $fs-2, $fw-bold-1);
+            }
+            .cinem-adress {
+                @include styleText($color-black-0, $fs-2, $fw-bold-1);
+            }
+            a {
+                color: $color-organe-0;
+            }
+        }
+    }
+    .showTimes__openingTime {
+        padding: $pd-2 $pd-4;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: calc(100% - 30px);
+            transform: translateX(-50%);
+            border-bottom: 1px solid #fff;
+            border-color: rgba(238, 238, 238, 0.88);
+        }
+        &:last-of-type::after {
+            content: "";
+            width: 0;
+        }
+        .showTimes__title {
+            display: flex;
+            &--img {
+                width: 60px;
+                height: 60px;
+                margin-right: $mg-1;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            &--text {
+                padding: $pd-1;
+                .movie-name {
+                    margin-bottom: $mg-0;
+                    @include styleText($color-black-0, $fs-2, $fw-bold-1);
+                    span {
+                        padding: 3px $pd-1;
+                        background-color: $color-organe-0;
+                        border-radius: $border-radius-1;
+                        color: $color-white-0;
+                    }
+                }
+                .movie-time {
+                    margin: 0;
+                    @include styleText($color-gray-2, $fs-1, $fw-normal);
+                }
+            }
+        }
+        .showTimes__sessions {
+            &--list {
+                .version {
+                    @include styleText($color-black-2, $fs-2, $fw-bold-1);
+                }
+                .sessions {
+                    display: flex;
+                    flex-wrap: wrap;
+                    a {
+                        width: calc(25% - 10px);
+                        background-color: $color-gray-3;
+                        border-radius: $border-radius-1;
+                        padding: $pd-0 0;
+                        display: block;
+                        text-align: center;
+                        text-decoration: none;
+                        margin: 0 10px 10px 0;
+                        @include styleBorder($color-gray-4);
+                        @include styleText($color-gray-1, $fs-1, $fw-bold);
+                        span {
+                            @include styleText($color-green-0, $fs-3, $fw-bold);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include responsive("extra-large") {
+    //content
+    .showTimes {
+        .showTimes__content {
+            max-width: 1140px;
+        }
+    }
+}
+@include responsive("mid-medium") {
+    //content
+    .showTimes {
+        &__row {
+            display: block;
+            .colum {
+                margin-bottom: $mg-3;
+            }
+            .colum-2,
+            .colum-3 {
+                width: 100%;
+            }
+        }
+    }
+}
