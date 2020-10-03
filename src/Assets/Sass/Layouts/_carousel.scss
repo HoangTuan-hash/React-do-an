@@ -1,29 +1,23 @@
+@import 'node_modules/react-modal-video/scss/modal-video.scss';
 .tixCarousel {
-    width: 100%;
-    margin: 0 auto;
-    &__content {
-        img {
-            display: block;
+    
+    &:hover {
+        i {
+            opacity: 1;
+        }
+    }
+    .carousel-indicators{
+        position: absolute;
+        bottom: 10%;
+    }
+    .item {
+        position: relative;
+        img{
             width: 100%;
             height: 600px;
         }
-        .item {
-            position: relative;
-        }
-        .owl-next span {
-            @include styleOwl($color-gray-1, 150px, $fw-light);
-            right: 0;
-        }
-        .owl-prev span {
-            @include styleOwl($color-gray-1, 150px, $fw-light);
-            left: 0;
-        }
-        &:hover {
-            i {
-                opacity: 1;
-            }
-        }
     }
+    
     &__text {
         position: absolute;
         top: 50%;
@@ -52,28 +46,8 @@
             }
         }
     }
-    .owl-dots {
-        position: absolute;
-        bottom: 100px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    .owl-theme {
-        .owl-dots {
-            .owl-dot {
-                &.active {
-                    span {
-                        background-color: $color-organe-0;
-                    }
-                }
-                &:hover{
-                    span{
-                        background-color: $color-gray-3;
-                    }
-                }
-            }
-        }
-    }
+    
+    
     // .owl-theme .owl-nav.disabled + .owl-dots {
     //     /* margin-top: 10px; */
     //     position: absolute;

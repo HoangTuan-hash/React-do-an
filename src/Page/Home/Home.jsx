@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import Carousel from '../../Components/Carousel/Carousel'
 import Header from '../../Components/Header/Header'
+import Movie from '../../Components/Movie/Movie'
 
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
         <Fragment>
             <Header />
             <Carousel />
+            <Movie />
        </Fragment>
     )
 }

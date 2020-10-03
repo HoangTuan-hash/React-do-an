@@ -15,6 +15,22 @@
             .movie__go{
                 z-index: 9999;
             }
+            .carousel-control-next-icon, .carousel-control-prev-icon{
+                width: 50px;
+                height: 50px;
+            }
+            .carousel-control-next{
+                right: -10%;
+                .carousel-control-next-icon{
+                    background-image: url(./right-arrow-comments.png);
+                }
+            }
+            .carousel-control-prev{
+                left: -10%;
+                .carousel-control-prev-icon{
+                    background-image: url(./left-arrow.png);
+                }
+            }
         }
         // .tab-content{
         //     margin: 0;
@@ -155,6 +171,9 @@
             padding: 0 10px;
         }
         &:hover {
+            span{
+                opacity: 0;
+            }
             .go {
                 opacity: 1;
             }

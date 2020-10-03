@@ -6,8 +6,10 @@ import * as serviceWorker from './serviceWorker';
 //setup redux
 import store from './redux/configStore'
 import { Provider } from 'react-redux';
+//bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
 //scss
-
+import './Assets/Sass/main.scss'
 
 
 ReactDOM.render(

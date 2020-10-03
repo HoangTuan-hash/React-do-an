@@ -1,46 +1,44 @@
-import React from 'react'
-import './_carousel.scss';
-// import '../../Assets/Css/owl.carousel.min.css'
-// import '../../Assets/Css/owl.theme.default.css' 
+import React, { Fragment, useState } from 'react';
+import {Carousel} from 'react-bootstrap';
+import ModalVideo from 'react-modal-video'
 
-export default function Carousel() {
-    return (
-        <section className="tixCarousel">
-            <div className="tixCarousel__content">
-                <div className="owl-carousel owl-exam owl-theme">
-                    <div className="item">
-                        <img src="./img/carousel1.png" alt />
-                        <div className="tixCarousel__text">
-                            <a className="js-video-btn" data-video-id="686mNAJVXzA"><i className="fa fa-play" /></a>
-                        </div>
-                    </div>
-                    <div className="item">
-                        <img src="./img/carousel2.jpg" alt />
-                        <div className="tixCarousel__text">
-                            <a className="js-video-btn" data-video-id="686mNAJVXzA"><i className="fa fa-play" /></a>
-                        </div>
-                    </div>
-                    <div className="item">
-                        <img src="./img/carousel3.jpg" alt />
-                        <div className="tixCarousel__text">
-                            <a className="js-video-btn" data-video-id="686mNAJVXzA"><i className="fa fa-play" /></a>
-                        </div>
-                    </div>
-                    <div className="item">
-                        <img src="./img/carousel4.jpg" alt />
-                        <div className="tixCarousel__text">
-                            <a className="js-video-btn" data-video-id="686mNAJVXzA"><i className="fa fa-play" /></a>
-                        </div>
-                    </div>
-                    <div className="item">
-                        <img src="./img/carousel5.png" alt />
-                        <div className="tixCarousel__text">
-                            <a className="js-video-btn" data-video-id="686mNAJVXzA"><i className="fa fa-play" /></a>
-                        </div>
-                    </div>
-                </div>
+import { useSelector } from 'react-redux';
+
+
+export default function CarouselMovie() {
+    const[trailerID,settrailerID]=useState('');
+    const [isOpen, setOpen] = useState(false)
+    const state = useSelector(state => state.QuanLyPhimReducer.dsPhim)
+
+    const reanderCarousel = ()=>{
+      return state.slice(6,10).map((fiml,index)=>{
+        return(
+          <Carousel.Item className="item">
+            <img
+              className="d-block w-100"
+              src={fiml.hinhAnh}
+              alt={fiml.hinhAnh}
+            />
+            <div class="tixCarousel__text">
+              <a   onClick={() => onClickTrailer(fiml)
+              }>
+                <i class="fa fa-play"></i>
+                </a>
             </div>
-        </section>
-
+          </Carousel.Item>
+        )
+      })
+    }
+    const onClickTrailer = (filmClick) =>{
+      setOpen(true);
+      settrailerID(filmClick.trailer.substr(30))
+    }
+    return (
+      <Fragment>
+        <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId={trailerID} onClose={() => setOpen(false)} />
+      <Carousel className="tixCarousel" >
+        {reanderCarousel()}
+      </Carousel>
+      </Fragment>
     )
 }
