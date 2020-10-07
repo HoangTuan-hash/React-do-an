@@ -22,7 +22,7 @@ export default function CarouselMovie() {
             <div class="tixCarousel__text">
               <a   onClick={() => onClickTrailer(fiml)
               }>
-                <i class="fa fa-play"></i>
+               <i className="fa fa-play" />
                 </a>
             </div>
           </Carousel.Item>

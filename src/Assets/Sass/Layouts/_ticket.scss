@@ -40,6 +40,8 @@
     
     &__dropdow{
         width: max-content;
+        max-height: 200px;
+        overflow-y: scroll;
         margin: 0 -$mg-2;
         padding: $pd-0 0;
 
@@ -52,7 +54,7 @@
         border: 1px solid rgba(0,0,0,.15);
         border-radius: $border-radius-1;
 
-        display: none;
+        // display: none;
         ul{
             list-style: none;
             margin: 0;
@@ -70,7 +72,11 @@
                     background-color: $color-blue-0;
                     a{
                         color: $color-white-0;
+                        &:hover{
+                            color: $color-white-0;
+                        }
                     }
+                    
                    
                 }
             }

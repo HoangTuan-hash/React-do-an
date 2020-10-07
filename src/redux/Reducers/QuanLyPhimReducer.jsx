@@ -1,8 +1,9 @@
-import { LAY_DANH_SACH_PHIM } from "../Constans/QuanLyPhimConstan"
+import { LAY_CHI_TIET_PHIM, LAY_DANH_SACH_PHIM } from "../Constans/QuanLyPhimConstan"
 
 
 const initialState = {
-    dsPhim : []
+    dsPhim : [],
+    chiTietPhim: {}
 };
 
 const QuanLyPhimReducer = (state = initialState, action )=> {
@@ -12,7 +13,10 @@ const QuanLyPhimReducer = (state = initialState, action )=> {
             state.dsPhim = action.dsPhim;
             return { ...state, }
         };
-        
+        case LAY_CHI_TIET_PHIM:{
+            state.chiTietPhim = action.chiTietPhim;
+            return {...state}
+        }
         default:{
             return state
         } 

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Carousel } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux'
 import { layDanhSachPhimApiAction } from '../../redux/Actions/QuanLyPhimAction';
+import Ticket from '../Ticket/Ticket';
 
 
 export default function Movie() {
@@ -52,153 +53,7 @@ export default function Movie() {
     
     return (
         <section className="movie">
-            {/* ticket Tuấn võ */}
-            <section className="ticket d-none d-lg-block" id="ticket">
-                <div className="container">
-                    <div className="ticket__content row">
-                        <div className="ticket__item col-3">
-                            <div className="ticket__item--content">
-                                <span>Phim</span>
-                                <img src="./img/dropdown-icon.png" alt />
-                            </div>
-                            <div className="ticket__dropdow">
-                                <ul>
-                                    <li><a href="#">
-                                        <p>Bán Đảo - Peninsula - (C18)</p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>Bóng Ma Không Xác - Without A Body - (C18)
-                                         </p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>Bằng Chứng Vô Hình - (C18)</p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>Đỉnh Mù Sương - Foggy Mountain - (C18)</p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>Tàn Tích Quỷ Ám - Relic - (C18)</p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>Hậu Duệ Thần Sấm - Mortal - (C16)</p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>Yêu Nhau Mùa Ế - Low Season - (C16)</p>
-                                    </a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="ticket__item col">
-                            <div className="ticket__item--content">
-                                <span>Rạp</span>
-                                <img src="./img/dropdown-icon.png" alt />
-                            </div>
-                            <div className="ticket__dropdow">
-                                <ul>
-                                    <li><a href="#">
-                                        <p>CGV Aeon Bình Tân</p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>CGV Aeon Tân Phú
-                  </p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>CGV Crescent Mall</p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>CGV Giga Mall Thủ Đức</p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>CGV Hoàng Văn Thụ</p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>CGV Hùng Vương Plaza</p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>CGV IMC Trần Quang Khải</p>
-                                    </a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="ticket__item col">
-                            <div className="ticket__item--content">
-                                <span>Ngày xem</span>
-                                <img src="./img/dropdown-icon.png" alt />
-                            </div>
-                            <div className="ticket__dropdow">
-                                <ul>
-                                    <li><a href="#">
-                                        <p>Hôm nay</p>
-                                        <p>2020-08-06</p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>Hôm nay</p>
-                                        <p>2020-08-06</p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>Hôm nay</p>
-                                        <p>2020-08-06</p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>Hôm nay</p>
-                                        <p>2020-08-06</p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>Hôm nay</p>
-                                        <p>2020-08-06</p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>Hôm nay</p>
-                                        <p>2020-08-06</p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>Hôm nay</p>
-                                        <p>2020-08-06</p>
-                                    </a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="ticket__item col">
-                            <div className="ticket__item--content">
-                                <span>Suất chiếu</span>
-                                <img src="./img/dropdown-icon.png" alt />
-                            </div>
-                            <div className="ticket__dropdow">
-                                <ul>
-                                    <li><a href="#">
-                                        <p>13:15</p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>13:15
-                  </p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>13:15</p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>13:15</p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>13:15</p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>13:15</p>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <p>13:15</p>
-                                    </a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="ticket__item col">
-                            <div className="ticket__item--content">
-                                <button className="btn btn-dark">Mua vé ngay</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            {/* end ticket*/}
+            <Ticket />
             <class className="movie__content">
                 <div className="col">
                     <div className="myTab">
@@ -240,7 +95,7 @@ export default function Movie() {
                                             </div>
                                             <div className="movie__buy">
                                                 <i className="go fa fa-play js-video-btn" data-video-id="686mNAJVXzA" />
-                                                <a href>MUA VÉ</a>
+                                                <a >MUA VÉ</a>
                                                 {/* <div class="color"></div> */}
                                             </div>
                                         </div>
