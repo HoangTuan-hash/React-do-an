@@ -20,8 +20,8 @@ export default function Ticket() {
             return;
         }
         setToggleDropDown(false);
-        setToggleCinema(false)
-        
+        setToggleCinema(false);
+        setToggleDate(false);
     };
     //Kết thúc phần bắt sự kiện click outside
 
@@ -97,11 +97,11 @@ export default function Ticket() {
                             return (
                                 <li onClick={()=>{
                                     console.log(lichChieu.ngayChieuGioChieu);
-                                    setDate(moment(lichChieu.ngayChieuGioChieu).format('dddd-mm-yyyy'));
+                                    setDate(moment(lichChieu.ngayChieuGioChieu).format('DD-mm-yyyy'));
                                 }}>
                                     <a >
                                         <p>Hôm nay</p>
-                                        <p>{moment(lichChieu.ngayChieuGioChieu).format('dddd-mm-yyyy')}</p>
+                                        <p>{moment(lichChieu.ngayChieuGioChieu).format('DD-mm-yyyy')}</p>
                                     </a>
                                 </li>
                             )
@@ -126,7 +126,8 @@ export default function Ticket() {
                 <div className="ticket__content row">
                     <div className="ticket__item col-3" onClick={()=>{
                             setToggleDropDown(!toggleDropDown);
-                            setToggleCinema(false)
+                            setToggleCinema(false);
+                            setToggleDate(false);
                         }}>
                         <div className="ticket__item--content">
                             <span>{nameFiml}</span>
@@ -168,6 +169,7 @@ export default function Ticket() {
                             </ul>
                         </div>
                     </div>
+                    
                     <div className="ticket__item col">
                         <div className="ticket__item--content">
                             <span>Suất chiếu</span>
@@ -175,24 +177,6 @@ export default function Ticket() {
                         </div>
                         <div className="ticket__dropdow">
                             {/* <ul>
-                                <li><a href="#">
-                                    <p>13:15</p>
-                                </a></li>
-                                <li><a href="#">
-                                    <p>13:15 </p>
-                                </a></li>
-                                <li><a href="#">
-                                    <p>13:15</p>
-                                </a></li>
-                                <li><a href="#">
-                                    <p>13:15</p>
-                                </a></li>
-                                <li><a href="#">
-                                    <p>13:15</p>
-                                </a></li>
-                                <li><a href="#">
-                                    <p>13:15</p>
-                                </a></li>
                                 <li><a href="#">
                                     <p>13:15</p>
                                 </a></li>
